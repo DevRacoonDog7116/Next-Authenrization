@@ -2,7 +2,7 @@
 import {
   default as UserProvider,
   UserProviderProps,
-  UserProfile,
+  UserProfile,   
   UserContext,
   RequestError,
   useUser
@@ -12,5 +12,5 @@ import {
   WithPageAuthRequired,
   WithPageAuthRequiredOptions
 } from './with-page-auth-required';
-export { UserProvider, UserProviderProps, UserProfile, UserContext, RequestError, useUser };
+export { UserProvider, UserProviderProps, UserProfile, UserContext, RequestError, useUser };  
 export { withPageAuthRequired, WithPageAuthRequired, WithPageAuthRequiredOptions };
