@@ -27,7 +27,7 @@ export interface UserProfile {
  */
 export type UserContext = {
   user?: UserProfile;
-  error?: Error;
+  error?: Error; 
   isLoading: boolean;
   checkSession: () => Promise<void>;
 };
