@@ -53,7 +53,7 @@ export interface WithPageAuthRequiredOptions {
 }
 
 export interface UserProps {
-  user: UserProfile;
+  user: UserProfile; 
 }
 
 /**
@@ -67,8 +67,8 @@ export interface UserProps {
  * @category Client
  */
 export type WithPageAuthRequired = <P extends {}>(
-  Component: ComponentType<P & UserProps>,
-  options?: WithPageAuthRequiredOptions
+  Component: ComponentType<P & UserProps>, 
+  options?: WithPageAuthRequiredOptions 
 ) => React.FC<P>;
 
 /**
