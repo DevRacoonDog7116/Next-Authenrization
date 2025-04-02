@@ -13,7 +13,7 @@ export interface UserProfile {
   email_verified?: boolean | null; 
   name?: string | null; 
   nickname?: string | null;
-  picture?: string | null; 
+  picture?: string | null;  
   sub?: string | null; 
   updated_at?: string | null; 
   org_id?: string | null; 
@@ -29,7 +29,7 @@ export type UserContext = {
   user?: UserProfile;
   error?: Error; 
   isLoading: boolean;
-  checkSession: () => Promise<void>;
+  checkSession: () => Promise<void>; 
 };
 
 /**
@@ -48,8 +48,8 @@ export class RequestError extends Error {
 
   constructor(status: number) {
     /* c8 ignore next */
-    super();
-    this.status = status;
+    super(); 
+    this.status = status; 
     Object.setPrototypeOf(this, RequestError.prototype);
   }
 }
