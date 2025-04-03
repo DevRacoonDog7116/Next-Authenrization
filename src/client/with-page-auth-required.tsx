@@ -53,7 +53,7 @@ export interface WithPageAuthRequiredOptions {
 }
 
 export interface UserProps {
-  user: UserProfile; 
+  user: UserProfile;  
 }
 
 /**
@@ -67,8 +67,8 @@ export interface UserProps {
  * @category Client
  */
 export type WithPageAuthRequired = <P extends {}>(
-  Component: ComponentType<P & UserProps>, 
-  options?: WithPageAuthRequiredOptions 
+  Component: ComponentType<P & UserProps>,  
+  options?: WithPageAuthRequiredOptions  
 ) => React.FC<P>;
 
 /**
@@ -77,8 +77,8 @@ export type WithPageAuthRequired = <P extends {}>(
 const withPageAuthRequired: WithPageAuthRequired = (Component, options = {}) => {
   return function WithPageAuthRequired(props): JSX.Element {
     const { returnTo, onRedirecting = defaultOnRedirecting, onError = defaultOnError } = options;
-    const { loginUrl } = useConfig();
-    const { user, error, isLoading } = useUser();
+    const { loginUrl } = useConfig(); 
+    const { user, error, isLoading } = useUser(); 
 
     useEffect(() => {
       if ((user && !error) || isLoading) return;
@@ -86,9 +86,9 @@ const withPageAuthRequired: WithPageAuthRequired = (Component, options = {}) => 
 
       if (!returnTo) {
         const currentLocation = window.location.toString();
-        returnToPath = currentLocation.replace(new URL(currentLocation).origin, '') || '/';
+        returnToPath = currentLocation.replace(new URL(currentLocation).origin, '') || '/'; 
       } else {
-        returnToPath = returnTo;
+        returnToPath = returnTo; 
       }
 
       window.location.assign(`${loginUrl}?returnTo=${encodeURIComponent(returnToPath)}`);
