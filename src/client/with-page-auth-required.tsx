@@ -29,7 +29,7 @@ export interface WithPageAuthRequiredOptions {
    *
    * Add a path to return the user to after login.
    */
-  returnTo?: string;
+  returnTo?: string;  
   /**
    * ```js
    * withPageAuthRequired(Profile, {
@@ -39,7 +39,7 @@ export interface WithPageAuthRequiredOptions {
    *
    * Render a message to show that the user is being redirected to the login.
    */
-  onRedirecting?: () => JSX.Element;
+  onRedirecting?: () => JSX.Element;  
   /**
    * ```js
    * withPageAuthRequired(Profile, {
@@ -52,9 +52,9 @@ export interface WithPageAuthRequiredOptions {
   onError?: (error: Error) => JSX.Element;
 }
 
-export interface UserProps {
-  user: UserProfile;  
-}
+export interface UserProps {  
+  user: UserProfile;    
+}  
 
 /**
  * ```js
