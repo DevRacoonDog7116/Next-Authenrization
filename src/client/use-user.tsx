@@ -17,7 +17,7 @@ export interface UserProfile {
   sub?: string | null; 
   updated_at?: string | null; 
   org_id?: string | null; 
-  [key: string]: unknown; // Any custom claim which could be in the profile
+  [key: string]: unknown; // Any custom claim which could be in the profile  
 }
 
 /**
@@ -35,10 +35,10 @@ export type UserContext = {
 /**
  * The error thrown by the default {@link UserFetcher}.
  *
- * The `status` property contains the status code of the response. It is `0` when the request
- * fails, for example due to being offline.
+ * The `status` property contains the status code of the response. It is `0` when the request  
+ * fails, for example due to being offline.  
  *
- * This error is not thrown when the status code of the response is `204`, because that means the
+ * This error is not thrown when the status code of the response is `204`, because that means the  
  * user is not authenticated.
  *
  * @category Client
@@ -55,11 +55,11 @@ export class RequestError extends Error {
 }
 
 /**
- * Fetches the user from the profile API route to fill the {@link useUser} hook with the
+ * Fetches the user from the profile API route to fill the {@link useUser} hook with the  
  * {@link UserProfile} object.
  *
- * If needed, you can pass a custom fetcher to the {@link UserProvider} component via the
- * {@link UserProviderProps.fetcher} prop.
+ * If needed, you can pass a custom fetcher to the {@link UserProvider} component via the  
+ * {@link UserProviderProps.fetcher} prop.  
  *
  * @throws {@link RequestError}
  */
@@ -68,9 +68,9 @@ type UserFetcher = (url: string) => Promise<UserProfile | undefined>;
 /**
  * Configure the {@link UserProvider} component.
  *
- * If you have any server-side rendered pages (using `getServerSideProps` or Server Components), you should get the
- * user from the server-side session and pass it to the `<UserProvider>` component via the `user`
- * prop. This will prefill the {@link useUser} hook with the {@link UserProfile} object.
+ * If you have any server-side rendered pages (using `getServerSideProps` or Server Components), you should get the  
+ * user from the server-side session and pass it to the `<UserProvider>` component via the `user`  
+ * prop. This will prefill the {@link useUser} hook with the {@link UserProfile} object.  
  * For example:
  *
  * ```js
@@ -80,8 +80,8 @@ type UserFetcher = (url: string) => Promise<UserProfile | undefined>;
  *
  * export default function App({ Component, pageProps }) {
  *   // If you've used `withPageAuthRequired`, `pageProps.user` can prefill the hook
- *   // if you haven't used `withPageAuthRequired`, `pageProps.user` is undefined so the hook
- *   // fetches the user from the API route
+ *   // if you haven't used `withPageAuthRequired`, `pageProps.user` is undefined so the hook  
+ *   // fetches the user from the API route  
  *   const { user } = pageProps;
  *
  *   return (
@@ -100,7 +100,7 @@ type UserFetcher = (url: string) => Promise<UserProfile | undefined>;
  *
  * export default async function RootLayout({ children }) {
  *   // this will emit a warning because Server Components cannot write to cookies
- *   // see https://github.com/auth0/nextjs-auth0#using-this-sdk-with-react-server-components
+ *   // see https://github.com/auth0/nextjs-auth0#using-this-sdk-with-react-server-components  
  *   const session = await getSession();
  *
  *   return (
