@@ -10,6 +10,7 @@ import ConfigProvider, { ConfigContext } from './use-config';
  */
 export interface UserProfile {
   email?: string | null; 
+  email?: string | null;
   email_verified?: boolean | null;
   name?: string | null;
   nickname?: string | null;
