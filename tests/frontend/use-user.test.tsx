@@ -11,10 +11,10 @@ import {
 import { useUser, UserContext, RequestError } from '../../src/client';
 import { useConfig } from '../../src/client/use-config';
 import React from 'react';
-
+ 
 describe('context wrapper', () => {
-  afterEach(() => delete (global as any).fetch);
-
+  afterEach(() => delete (global as any).fetch); 
+ 
   test('should use the default profile url', async () => {
     const fetchSpy = jest.fn().mockReturnValue(Promise.resolve());
     (global as any).fetch = fetchSpy;
@@ -25,7 +25,7 @@ describe('context wrapper', () => {
     await waitForValueToChange(() => result.current.isLoading);
     expect(fetchSpy).toHaveBeenCalledWith('/api/auth/me');
   });
-
+ 
   test('should accept a custom profile url', async () => {
     const fetchSpy = jest.fn().mockReturnValue(Promise.resolve());
     (global as any).fetch = fetchSpy;
