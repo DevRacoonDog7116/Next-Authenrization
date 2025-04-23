@@ -15,12 +15,12 @@ const Layout = ({ children }: React.PropsWithChildren<unknown>): React.ReactElem
       <div className="container">{children}</div>
     </main>
 
-    <style jsx>{`
-      .container {
-        max-width: 62rem;
-        margin: 1.5rem auto;
-      }
-    `}</style>
+    <style jsx>{` 
+      .container { 
+        max-width: 62rem; 
+        margin: 1.5rem auto; 
+      } 
+    `}</style> 
     <style jsx global>{`
       body {
         margin: 0;
